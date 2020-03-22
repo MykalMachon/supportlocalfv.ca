@@ -56,6 +56,19 @@ nav {
   }
 }
 
+div.main_content {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  width: calc(100% - 96px);
+  margin: 0px 48px;
+}
+
+section.container {
+  width: 100%;
+  max-width: 1200px;
+}
+
 footer {
   width: 100%;
   min-height: 85px;
