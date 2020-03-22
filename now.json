@@ -1,6 +1,9 @@
 {
-  "env": {
-    "SLFV_TOKEN": "@slfv_token",
-    "NODE_ENV": "production"
+  "build": {
+    "env": {
+      "TEST_TOKEN": "HELLO",
+      "SLFV_TOKEN": "@slfv_token",
+      "NODE_ENV": "production"
+    }
   }
 }
