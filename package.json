@@ -1,0 +1,37 @@
+{
+  "name": "supportlocalfv.ca",
+  "version": "1.0.0",
+  "description": "a directory of local businesses in the fraser valley",
+  "main": "index.js",
+  "scripts": {
+    "dev": "env-cmd next",
+    "build": "next build",
+    "start": "next start",
+    "deploy": "now"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MykalMachon/supportlocalfv.ca.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MykalMachon/supportlocalfv.ca/issues"
+  },
+  "homepage": "https://github.com/MykalMachon/supportlocalfv.ca#readme",
+  "dependencies": {
+    "@zeit/next-sass": "^1.0.1",
+    "env-cmd": "^10.1.0",
+    "isomorphic-unfetch": "^3.0.0",
+    "next": "^9.3.1",
+    "node-sass": "^4.13.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "@types/node": "^13.9.2",
+    "@types/react": "^16.9.25",
+    "typescript": "^3.8.3"
+  }
+}

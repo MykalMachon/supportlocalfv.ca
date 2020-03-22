@@ -1,0 +1,6 @@
+{
+  "env": {
+    "SLFV_TOKEN": "@slfv_token",
+    "NODE_ENV": "production"
+  }
+}
