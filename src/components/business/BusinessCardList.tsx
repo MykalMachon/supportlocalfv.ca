@@ -1,10 +1,10 @@
 import { FC } from 'react';
 import BusinessCard from './BusinessCard';
-import { Business } from '../types';
+import { Business } from '../../types';
 
 const BusinessCardList: FC<BusinessCardListProps> = ({ bizlist }) => {
   return (
-    <ul className="businesses">
+    <ul className="bc_list">
       {bizlist.map((biz) => {
         return <BusinessCard key={biz.id} business={biz} />;
       })}
