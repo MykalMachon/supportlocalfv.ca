@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import { FiInstagram, FiPhone, FiGlobe } from 'react-icons/fi';
 import { Business } from '../../types';
 
 const BusinessCard: FC<BusinessCardProps> = ({
@@ -16,7 +17,22 @@ const BusinessCard: FC<BusinessCardProps> = ({
           {hours}
         </p>
         <h3 className="bc_list-name">{name}</h3>
-        <p className="bc_lit-location">{city}</p>
+        <p className="bc_list-location">{city}</p>
+        <div className="bc_list-options">
+          <p className="bc_list-options__heading">Gift Cards</p>
+          <p className="bc_list-options__heading">Order Options</p>
+        </div>
+        <ul className="bc_list-actions">
+          <li>
+            <FiInstagram size={20} />
+          </li>
+          <li>
+            <FiGlobe size={20} />
+          </li>
+          <li>
+            <FiPhone size={20} />
+          </li>
+        </ul>
       </div>
     </li>
   );

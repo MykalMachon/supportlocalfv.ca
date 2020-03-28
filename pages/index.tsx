@@ -23,7 +23,7 @@ const HomePage = ({ data: { businesses } }) => {
             <p>
               This information is crowd-sourced, so please verify the accuracy
               independently. If you see a mistake, please{' '}
-              <Link href="/contactUs">
+              <Link href="/contact">
                 <a>contact us</a>
               </Link>
               .

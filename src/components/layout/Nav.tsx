@@ -33,7 +33,7 @@ const Nav: FC<NavProps> = ({}) => {
               </Link>
             </li>
             <li>
-              <Link href="/contactus">
+              <Link href="/contact">
                 <a>Contact Us</a>
               </Link>
             </li>
