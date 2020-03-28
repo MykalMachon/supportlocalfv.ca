@@ -1,5 +1,6 @@
 import { FC, useState, useEffect } from 'react';
 import { Business } from '../../types';
+import { FiSearch } from 'react-icons/fi';
 
 const BusinessSearch: FC<BusinessSearchType> = ({
   filteredList,
@@ -29,15 +30,18 @@ const BusinessSearch: FC<BusinessSearchType> = ({
   }, [searchQuery]);
 
   return (
-    <input
-      type="text"
-      name="search"
-      id="searchBusiness"
-      className="bc_search"
-      onChange={(e) => {
-        setSearchQuery(e.target.value);
-      }}
-    />
+    <div className="bc_search">
+      <FiSearch />
+      <input
+        type="text"
+        name="search"
+        id="searchBusiness"
+        placeholder="Search by name, city, and category..."
+        onChange={(e) => {
+          setSearchQuery(e.target.value);
+        }}
+      />
+    </div>
   );
 };
 

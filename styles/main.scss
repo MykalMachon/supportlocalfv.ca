@@ -197,6 +197,34 @@ article.intro_container {
   }
 }
 
+.bc_search {
+  background: white;
+  padding: 0.8em 1.2em;
+  border-radius: 4px;
+  color: var(--gray700);
+  border: solid 2px var(--gray400);
+  border-top-color: white;
+  border-left-color: white;
+  border-right-color: white;
+  transition: all 0.12s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  max-width: 300px;
+  input {
+    border: 0px;
+    margin: 0px 0px 0px 1.2em;
+    width: 100%;
+    &:focus {
+      outline: none;
+    }
+  }
+  &:focus-within {
+    border: 2px solid var(--teal500);
+    color: var(--teal700);
+  }
+}
+
 ul.bc_list {
   list-style: none;
   margin: 2em 0px;
