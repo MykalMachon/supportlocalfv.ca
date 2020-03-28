@@ -6,10 +6,11 @@ export interface Business {
   city: string;
   category: string;
   hours: string;
+  phoneNumber: string;
   hasGiftCards: boolean;
   giftCardUrl: string;
   hasRemoteOrders: boolean;
-  orderPn: number;
   orderUrl: string;
+  instagramUrl: string;
   otherInformation: string;
 }
