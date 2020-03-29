@@ -318,4 +318,9 @@ ul.bc_list-actions {
   ul.bc_list {
     grid-template-columns: 1fr;
   }
+
+  .bc_search {
+    max-width: 100%;
+    width: 100%;
+  }
 }
