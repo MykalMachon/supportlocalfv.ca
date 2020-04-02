@@ -30,7 +30,7 @@ const BusinessSearch: FC<BusinessSearchType> = ({
   }, [searchQuery]);
 
   return (
-    <div className="bc_search">
+    <div className="input-icon bc_search">
       <FiSearch />
       <input
         type="text"

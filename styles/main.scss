@@ -41,7 +41,9 @@ body {
     font-family: 'Playfair Display', serif;
   }
   p,
-  a {
+  a,
+  textarea,
+  input {
     font-family: 'Open Sans', sans-serif;
     color: var(--gray800);
   }
@@ -125,6 +127,11 @@ section.container {
   max-width: 1200px;
 }
 
+section.container_small {
+  width: 100%;
+  max-width: 800px;
+}
+
 footer {
   width: 100%;
   min-height: 85px;
@@ -197,7 +204,67 @@ article.intro_container {
   }
 }
 
-.bc_search {
+// forms
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  input,
+  div.input-icon,
+  textarea {
+    width: 100%;
+    font-size: 16px;
+  }
+  input[type='submit'] {
+    margin-top: 1em;
+    border-radius: 4px;
+    color: var(--gray700);
+    background: var(--gray400);
+    color: white;
+    border: solid 2px var(--gray400);
+    padding: 0.8em 1.2em;
+    transition: all 0.12s ease-in-out;
+
+    &:hover,
+    &:focus {
+      outline: none;
+      border: 2px solid var(--teal500);
+      background: var(--teal500);
+    }
+  }
+}
+
+// Inputs
+
+input,
+label {
+  font-size: 16px;
+}
+
+label {
+  display: inline-block;
+  margin: 1em 0px 0.6em 0px;
+}
+
+.input {
+  background: white;
+  padding: 0.8em 1.2em;
+  border-radius: 4px;
+  color: var(--gray700);
+  border: solid 2px var(--gray400);
+  border-top-color: white;
+  border-left-color: white;
+  border-right-color: white;
+  transition: all 0.12s ease-in-out;
+  &:focus {
+    outline: none;
+    border: 2px solid var(--teal500);
+    color: var(--teal700);
+  }
+}
+
+.input-icon {
   background: white;
   padding: 0.8em 1.2em;
   border-radius: 4px;
@@ -210,7 +277,6 @@ article.intro_container {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  max-width: 300px;
   input {
     border: 0px;
     margin: 0px 0px 0px 1.2em;
@@ -222,7 +288,12 @@ article.intro_container {
   &:focus-within {
     border: 2px solid var(--teal500);
     color: var(--teal700);
+    fill: var(--teal700);
   }
+}
+
+.bc_search {
+  max-width: 376px;
 }
 
 ul.bc_list {
