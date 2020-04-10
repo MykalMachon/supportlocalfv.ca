@@ -225,12 +225,31 @@ form {
     border: solid 2px var(--gray400);
     padding: 0.8em 1.2em;
     transition: all 0.12s ease-in-out;
-
+    cursor: pointer;
     &:hover,
     &:focus {
       outline: none;
       border: 2px solid var(--teal500);
       background: var(--teal500);
+    }
+    &:disabled {
+      cursor: not-allowed;
+      background: var(--gray200);
+      color: white;
+      border: solid 2px var(--gray200);
+      &:hover {
+        background: var(--gray200);
+        color: white;
+        border: solid 2px var(--gray200);
+      }
+    }
+    &.submitted {
+      border: 2px solid var(--teal500);
+      background: var(--teal500);
+      &:hover {
+        border: 2px solid var(--teal500);
+        background: var(--teal500);
+      }
     }
   }
 }

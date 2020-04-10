@@ -1,8 +1,33 @@
 import Layout from '../src/components/layout/Layout';
 import { FiMail } from 'react-icons/fi';
+import { useState, useEffect } from 'react';
 
 const ContactUs = (props) => {
-  console.log(props);
+  const [formState, setFormState] = useState({
+    email: '',
+    formContent: '',
+  });
+  const [submitState, setSubmitState] = useState('INVALID');
+
+  const submitForm = async (e) => {
+    e.preventDefault();
+
+    setSubmitState('SUBMITTING');
+    const submission = await fetch('/api/contact', {
+      method: 'POST',
+      body: JSON.stringify(formState),
+    });
+    setSubmitState('SUBMITTED');
+  };
+
+  useEffect(() => {
+    if (formState.email === '' || formState.formContent === '') {
+      setSubmitState('INVALID');
+    } else {
+      setSubmitState('VALID');
+    }
+  }, [formState]);
+
   return (
     <Layout title="Contact Us">
       <h2>Reach Out To Us!</h2>
@@ -16,7 +41,7 @@ const ContactUs = (props) => {
           how we can better support local, or would just like to say hi, please
           reach out below!
         </p>
-        <form action="/api/contact">
+        <form action=":javascript" onSubmit={submitForm}>
           <label htmlFor="email">E-mail</label>
           <div className="input-icon">
             <FiMail />
@@ -25,11 +50,33 @@ const ContactUs = (props) => {
               name="email"
               id="email"
               placeholder="johndoe@gmail.com"
+              onChange={(e) => {
+                setFormState({ ...formState, email: e.target.value });
+              }}
             />
           </div>
           <label htmlFor="formContent">What would you like to say?</label>
-          <textarea className="input" id="formContent" />
-          <input type="submit" value="Send us an Email"></input>
+          <textarea
+            className="input"
+            id="formContent"
+            onChange={(e) => {
+              setFormState({ ...formState, formContent: e.target.value });
+            }}
+          />
+          <input
+            type="submit"
+            className={submitState === 'SUBMITTED' ? 'submitted' : ''}
+            value={
+              submitState === 'INVALID'
+                ? 'Fill out the form'
+                : submitState === 'VALID'
+                ? 'Send us an email'
+                : 'Thanks for reaching out! 😊'
+            }
+            disabled={
+              submitState === 'INVALID' || submitState.includes('SUBMIT')
+            }
+          ></input>
         </form>
       </section>
     </Layout>
