@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/MykalMachon/supportlocalfv.ca#readme",
   "dependencies": {
+    "@sendgrid/mail": "^7.0.0",
     "@zeit/next-sass": "^1.0.1",
     "env-cmd": "^10.1.0",
     "isomorphic-fetch": "^2.2.1",
