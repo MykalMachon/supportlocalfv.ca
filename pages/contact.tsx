@@ -21,15 +21,14 @@ const ContactUs = (props) => {
   // This function is run upon form submission
   const submitForm = async (e) => {
     e.preventDefault();
-
-    setSubmitState('SUBMITTING');\
-    try{
-      const submission = await fetch('/api/contact', {
+    setSubmitState('SUBMITTING');
+    try {
+      await fetch('/api/contact', {
         method: 'POST',
         body: JSON.stringify(formState),
       });
       setSubmitState('SUBMITTED');
-    }catch(err){
+    } catch (err) {
       console.error(err);
       setSubmitState('ERROR');
     }
@@ -44,9 +43,9 @@ const ContactUs = (props) => {
     ERROR: 'Failed to send email, try again later.',
   };
   return (
-    <Layout title="Contact Us">
+    <Layout title='Contact Us'>
       <h2>Reach Out To Us!</h2>
-      <section className="container_small">
+      <section className='container_small'>
         <p>
           All the information on this site is crowd funded by the community and
           therefore is not guaranteed to be 100% up-to-date or accurate.
@@ -56,30 +55,30 @@ const ContactUs = (props) => {
           how we can better support local, or would just like to say hi, please
           reach out below!
         </p>
-        <form action=":javascript" onSubmit={submitForm}>
-          <label htmlFor="email">E-mail</label>
-          <div className="input-icon">
+        <form action=':javascript' onSubmit={submitForm}>
+          <label htmlFor='email'>E-mail</label>
+          <div className='input-icon'>
             <FiMail />
             <input
-              type="email"
-              name="email"
-              id="email"
-              placeholder="johndoe@gmail.com"
+              type='email'
+              name='email'
+              id='email'
+              placeholder='johndoe@gmail.com'
               onChange={(e) => {
                 setFormState({ ...formState, email: e.target.value });
               }}
             />
           </div>
-          <label htmlFor="formContent">What would you like to say?</label>
+          <label htmlFor='formContent'>What would you like to say?</label>
           <textarea
-            className="input"
-            id="formContent"
+            className='input'
+            id='formContent'
             onChange={(e) => {
               setFormState({ ...formState, formContent: e.target.value });
             }}
           />
           <input
-            type="submit"
+            type='submit'
             className={submitState === 'SUBMITTED' ? 'submitted' : ''}
             value={submitStateValues[submitState]}
             disabled={
