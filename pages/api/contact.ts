@@ -3,10 +3,10 @@ import * as sgMail from '@sendgrid/mail';
 export default async (req, res) => {
   if (req.method === 'POST') {
     const data = JSON.parse(req.body);
-    sgMail.setApiKey(process.env.sg_api_key);
+    sgMail.setApiKey(process.env.SG_API_KEY);
 
     const message = {
-      to: 'mykalmachon@gmail.com',
+      to: `${process.env.MY_EMAIL}`,
       from: `${data.email}`,
       subject: 'New "Contact Us" Submission on SupportLocalFV.ca',
       text: `There is a new email from ${data.email}, they said...`,
