@@ -47,13 +47,12 @@ const ContactUs = (props) => {
       <h2>Reach Out To Us!</h2>
       <section className='container_small'>
         <p>
-          All the information on this site is crowd funded by the community and
-          therefore is not guaranteed to be 100% up-to-date or accurate.
+          Support Local Fraser Valley is 100% community driven, so we can't
+          guarantee we got everything right...
         </p>
         <p>
-          If you find an error, would like to add a business, have an idea on
-          how we can better support local, or would just like to say hi, please
-          reach out below!
+          If you find a typo, think that some of our info is wrong, or just want
+          to say hello, please send us an email below!
         </p>
         <form action=':javascript' onSubmit={submitForm}>
           <label htmlFor='email'>E-mail</label>
