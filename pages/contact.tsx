@@ -3,12 +3,22 @@ import { FiMail } from 'react-icons/fi';
 import { useState, useEffect } from 'react';
 
 const ContactUs = (props) => {
+  // Declare form states
   const [formState, setFormState] = useState({
     email: '',
     formContent: '',
   });
   const [submitState, setSubmitState] = useState('INVALID');
 
+  useEffect(() => {
+    if (formState.email === '' || formState.formContent === '') {
+      setSubmitState('INVALID');
+    } else {
+      setSubmitState('VALID');
+    }
+  }, [formState]);
+
+  // This function is run upon form submission
   const submitForm = async (e) => {
     e.preventDefault();
 
@@ -20,14 +30,14 @@ const ContactUs = (props) => {
     setSubmitState('SUBMITTED');
   };
 
-  useEffect(() => {
-    if (formState.email === '' || formState.formContent === '') {
-      setSubmitState('INVALID');
-    } else {
-      setSubmitState('VALID');
-    }
-  }, [formState]);
-
+  // By using the submitState as a key on this object, you can access corresponding button values
+  const submitStateValues = {
+    INVALID: 'Please fill out the form',
+    VALID: 'Send us an email!',
+    SUBMITTING: 'Sending...',
+    SUBMITTED: 'Email sent! Thank you 😊',
+    ERROR: 'Failed to send email, try again later.',
+  };
   return (
     <Layout title="Contact Us">
       <h2>Reach Out To Us!</h2>
@@ -66,13 +76,7 @@ const ContactUs = (props) => {
           <input
             type="submit"
             className={submitState === 'SUBMITTED' ? 'submitted' : ''}
-            value={
-              submitState === 'INVALID'
-                ? 'Fill out the form'
-                : submitState === 'VALID'
-                ? 'Send us an email'
-                : 'Thanks for reaching out! 😊'
-            }
+            value={submitStateValues[submitState]}
             disabled={
               submitState === 'INVALID' || submitState.includes('SUBMIT')
             }
