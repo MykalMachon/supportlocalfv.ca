@@ -22,12 +22,17 @@ const ContactUs = (props) => {
   const submitForm = async (e) => {
     e.preventDefault();
 
-    setSubmitState('SUBMITTING');
-    const submission = await fetch('/api/contact', {
-      method: 'POST',
-      body: JSON.stringify(formState),
-    });
-    setSubmitState('SUBMITTED');
+    setSubmitState('SUBMITTING');\
+    try{
+      const submission = await fetch('/api/contact', {
+        method: 'POST',
+        body: JSON.stringify(formState),
+      });
+      setSubmitState('SUBMITTED');
+    }catch(err){
+      console.error(err);
+      setSubmitState('ERROR');
+    }
   };
 
   // By using the submitState as a key on this object, you can access corresponding button values
