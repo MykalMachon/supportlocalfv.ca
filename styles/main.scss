@@ -368,6 +368,9 @@ div.bc_list-options {
     font-weight: bold;
     font-size: 0.8em;
   }
+  p.bc_list-options__content {
+    margin: 1em 0px 1.4em 0px;
+  }
 }
 
 ul.bc_list-actions {
@@ -401,6 +404,20 @@ ul.bc_list-actions {
     &:hover {
       color: var(--teal700);
     }
+  }
+}
+
+.bc_list-tag {
+  padding: 0.2em 1em;
+  margin-right: 0.6em;
+  border-radius: 24px;
+  background: var(--teal200);
+  color: var(--teal500);
+  user-select: none;
+  text-transform: capitalize;
+  &.no {
+    background: var(--gray050);
+    color: var(--gray400);
   }
 }
 

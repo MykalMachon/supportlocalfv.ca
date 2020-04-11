@@ -9,7 +9,7 @@ export interface Business {
   phoneNumber: string;
   hasGiftCards: boolean;
   giftCardUrl: string;
-  hasRemoteOrders: boolean;
+  hasRemoteOrders: string;
   orderUrl: string;
   instagramUrl: string;
   otherInformation: string;
