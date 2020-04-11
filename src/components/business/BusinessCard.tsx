@@ -16,7 +16,6 @@ const BusinessCard: FC<BusinessCardProps> = ({
   },
 }) => {
   const orderOptions = hasRemoteOrders.split(',');
-  console.log(orderOptions);
 
   return (
     <li className='bc_list-card'>
