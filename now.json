@@ -1,10 +1,12 @@
 {
+  "env": {
+    "SG_API_KEY": "@sg_api_key",
+    "MY_EMAIL": "@my_email"
+  },
   "build": {
     "env": {
       "TEST_TOKEN": "HELLO",
       "SLFV_TOKEN": "@slfv_token",
-      "SG_API_KEY": "@sg_api_key",
-      "MY_EMAIL": "@my_email",
       "NODE_ENV": "production"
     }
   }
