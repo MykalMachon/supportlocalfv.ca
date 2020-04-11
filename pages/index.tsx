@@ -8,8 +8,8 @@ import BusinessCardList from '../src/components/business/BusinessCardList';
 
 const HomePage = ({ data: { businesses } }) => {
   return (
-    <Layout title="Home">
-      <section className="container">
+    <Layout title='Home'>
+      <section className='container'>
         <Header />
         <BusinessCardList bizlist={businesses} />
       </section>

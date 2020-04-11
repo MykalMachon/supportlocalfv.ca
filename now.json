@@ -1,4 +1,8 @@
 {
+  "env": {
+    "SG_API_KEY": "@sg_api_key",
+    "MY_EMAIL": "@my_email"
+  },
   "build": {
     "env": {
       "TEST_TOKEN": "HELLO",
