@@ -130,6 +130,7 @@ section.container {
 section.container_small {
   width: 100%;
   max-width: 800px;
+  font-size: 18px;
 }
 
 footer {
@@ -141,10 +142,18 @@ footer {
   justify-items: center;
 }
 
+article.footer_content {
+  text-align: center;
+  margin: 0px 1em 1em 1em;
+  .footer_content-tiny {
+    font-size: 0.8em;
+  }
+}
+
 @media screen and (max-width: 800px) {
   nav {
     width: 100%;
-    margin: 0px 0px 2em 0px;
+    margin: 0px 0px 0px 0px;
     padding: 1em;
     div.nav_container {
       grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -201,6 +210,7 @@ article.intro_container {
     margin: 2em;
     text-align: center;
     max-width: 800px;
+    font-size: 18px;
   }
 }
 
@@ -358,32 +368,41 @@ img.bc_list-img {
     color: #ba2525;
   }
   &.yellow {
-    color: #e9b949;
+    color: #b7791f;
   }
 }
 
 div.bc_list-options {
+  display: grid;
+  grid-template-columns: auto 24px;
   p.bc_list-options__heading {
     text-transform: uppercase;
     font-weight: bold;
     font-size: 0.8em;
   }
+  p.bc_list-options__content {
+    margin: 1em 0px 1.4em 0px;
+  }
 }
 
-ul.bc_list-actions {
+div.bc_list-actions {
   list-style: none;
-  margin: 2em 0px 0px 0px;
+  margin: 1.2em 0px 0px 0px;
   padding: 0px;
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 16px;
-  .bc_list-actions__row {
+  ul.bc_list-actions__row {
+    margin: 0px;
+    padding: 0px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
     align-items: center;
     justify-items: start;
   }
   li {
+    margin: 0px;
+    padding: 0px;
     display: grid;
     justify-items: center;
     align-items: center;
@@ -393,7 +412,7 @@ ul.bc_list-actions {
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    color: var(--gray500);
+    color: var(--gray600);
     transition: all 0.15s ease-in-out;
     svg {
       margin-right: 6px;
@@ -401,6 +420,20 @@ ul.bc_list-actions {
     &:hover {
       color: var(--teal700);
     }
+  }
+}
+
+.bc_list-tag {
+  padding: 0.2em 1em;
+  margin-right: 0.6em;
+  border-radius: 24px;
+  background: var(--teal200);
+  color: var(--teal700);
+  user-select: none;
+  text-transform: capitalize;
+  &.no {
+    background: var(--gray050);
+    color: var(--gray600);
   }
 }
 
