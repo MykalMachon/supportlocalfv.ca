@@ -1,6 +1,7 @@
 import { FC } from 'react';
-import { FiInstagram, FiPhone, FiGlobe } from 'react-icons/fi';
+import { FiInstagram, FiPhone, FiGlobe, FiInfo } from 'react-icons/fi';
 import { Business } from '../../types';
+import ReactTooltip from 'react-tooltip';
 
 const BusinessCard: FC<BusinessCardProps> = ({
   business: {
@@ -13,6 +14,7 @@ const BusinessCard: FC<BusinessCardProps> = ({
     phoneNumber,
     hasGiftCards,
     hasRemoteOrders,
+    otherInformation,
   },
 }) => {
   const orderOptions = hasRemoteOrders.split(',');
@@ -45,27 +47,42 @@ const BusinessCard: FC<BusinessCardProps> = ({
 
       <div className='bc_list-card-pad'>
         <div className='bc_list-options'>
-          <p className='bc_list-options__heading'>Order Options</p>
-          <p className='bc_list-options__content'>
-            {!orderOptions.includes('none') ? (
-              orderOptions.map((option) => {
-                return <span className='bc_list-tag'>{option}</span>;
-              })
-            ) : (
-              <span className='bc_list-tag no'>none</span>
-            )}
-          </p>
-          <p className='bc_list-options__heading'>Gift Cards</p>
-          <p className='bc_list-options__content'>
-            {hasGiftCards ? (
-              <span className='bc_list-tag'>Available</span>
-            ) : (
-              <span className='bc_list-tag no'>None</span>
-            )}
-          </p>
+          <div>
+            <p className='bc_list-options__heading'>Order Options</p>
+            <p className='bc_list-options__content'>
+              {!orderOptions.includes('none') ? (
+                orderOptions.map((option) => {
+                  return <span className='bc_list-tag'>{option}</span>;
+                })
+              ) : (
+                <span className='bc_list-tag no'>none</span>
+              )}
+            </p>
+            <p className='bc_list-options__heading'>Gift Cards</p>
+            <p className='bc_list-options__content'>
+              {hasGiftCards ? (
+                <span className='bc_list-tag'>Available</span>
+              ) : (
+                <span className='bc_list-tag no'>None</span>
+              )}
+            </p>
+          </div>
+          {otherInformation ? (
+            <div style={{ color: 'var(--gray600)', margin: '12.8px 0px' }}>
+              <FiInfo
+                data-tip={otherInformation}
+                data-effect='solid'
+                data-background-color='var(--gray050)'
+                data-text-color='var(--gray400)'
+                data-border='true'
+                data-border-color='var(--gray200)'
+              />
+              <ReactTooltip />
+            </div>
+          ) : null}
         </div>
-        <ul className='bc_list-actions'>
-          <div className='bc_list-actions__row'>
+        <div className='bc_list-actions'>
+          <ul className='bc_list-actions__row'>
             {instagramUrl ? (
               <li>
                 <a href={instagramUrl}>
@@ -81,8 +98,8 @@ const BusinessCard: FC<BusinessCardProps> = ({
                 </a>{' '}
               </li>
             ) : null}
-          </div>
-          <div className='bc_list-actions__row'>
+          </ul>
+          <ul className='bc_list-actions__row'>
             {phoneNumber ? (
               <li>
                 <a href={`tel:${phoneNumber}`}>
@@ -90,8 +107,8 @@ const BusinessCard: FC<BusinessCardProps> = ({
                 </a>
               </li>
             ) : null}
-          </div>
-        </ul>
+          </ul>
+        </div>
       </div>
     </li>
   );

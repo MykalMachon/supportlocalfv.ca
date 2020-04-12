@@ -30,13 +30,16 @@ const BusinessSearch: FC<BusinessSearchType> = ({
   }, [searchQuery]);
 
   return (
-    <div className="input-icon bc_search">
+    <div className='input-icon bc_search'>
+      <label htmlFor='search' style={{ display: 'none' }}>
+        Search
+      </label>
       <FiSearch />
       <input
-        type="text"
-        name="search"
-        id="searchBusiness"
-        placeholder="Search by name, city, and category..."
+        type='text'
+        name='search'
+        id='searchBusiness'
+        placeholder='Search by name, city, and category...'
         onChange={(e) => {
           setSearchQuery(e.target.value);
         }}

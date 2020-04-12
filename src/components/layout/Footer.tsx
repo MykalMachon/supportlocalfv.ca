@@ -11,6 +11,10 @@ const Footer: FC<FooterProps> = ({}) => {
             <a>here</a>
           </Link>
         </p>
+        <p className='footer_content-tiny'>
+          Developed with 💖 by{' '}
+          <a href='https://twitter.com/mykalmachon'>Mykal</a>
+        </p>
       </article>
     </footer>
   );
