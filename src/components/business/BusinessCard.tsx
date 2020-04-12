@@ -15,12 +15,14 @@ const BusinessCard: FC<BusinessCardProps> = ({
     hasGiftCards,
     hasRemoteOrders,
     otherInformation,
+    orderUrl,
+    giftCardUrl,
   },
 }) => {
   const orderOptions = hasRemoteOrders.split(',');
 
   return (
-    <li className='bc_list-card'>
+    <div className='bc_list-card'>
       <div className='bc_list-card-pad'>
         <h3 className='bc_list-name'>{name}</h3>
         <p className='bc_list-location'>
@@ -44,7 +46,6 @@ const BusinessCard: FC<BusinessCardProps> = ({
         alt={`image of ${name}`}
         className='bc_list-img'
       />
-
       <div className='bc_list-card-pad'>
         <div className='bc_list-options'>
           <div>
@@ -81,6 +82,24 @@ const BusinessCard: FC<BusinessCardProps> = ({
             </div>
           ) : null}
         </div>
+        <div className='bc_list-actions support'>
+          <a
+            href={
+              !orderOptions.includes('none')
+                ? orderUrl
+                : hasGiftCards
+                ? giftCardUrl
+                : instagramUrl
+            }
+            className='button'
+          >
+            {!orderOptions.includes('none')
+              ? 'Order Now'
+              : hasGiftCards
+              ? 'Get a Gift Card'
+              : 'Visit Website'}
+          </a>
+        </div>
         <div className='bc_list-actions'>
           <ul className='bc_list-actions__row'>
             {instagramUrl ? (
@@ -110,7 +129,7 @@ const BusinessCard: FC<BusinessCardProps> = ({
           </ul>
         </div>
       </div>
-    </li>
+    </div>
   );
 };
 

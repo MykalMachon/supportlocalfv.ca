@@ -214,6 +214,30 @@ article.intro_container {
   }
 }
 
+.button,
+a.button {
+  margin-top: 1em;
+  border-radius: 4px;
+  margin: 0px;
+  color: var(--teal400);
+  background: white;
+  border: solid 2px var(--teal200);
+  padding: 0.8em 1.2em;
+  transition: all 0.12s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+  &:hover,
+  &:focus {
+    outline: none;
+    color: var(--teal600);
+    background: var(--teal200);
+    border: 2px solid var(--teal200);
+  }
+}
+
 // forms
 form {
   display: flex;
@@ -334,7 +358,7 @@ ul.bc_list {
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
 
-li.bc_list-card {
+.bc_list-card {
   background: white;
   border: 1px solid var(--gray100);
   border-radius: 4px;
@@ -353,7 +377,7 @@ li.bc_list-card {
 
 img.bc_list-img {
   width: 100%;
-  height: 300px;
+  height: 225px;
   object-fit: cover;
 }
 
@@ -382,6 +406,9 @@ div.bc_list-options {
   }
   p.bc_list-options__content {
     margin: 1em 0px 1.4em 0px;
+    &:last-of-type {
+      margin: 1em 0px 0.4em 0px;
+    }
   }
 }
 
@@ -392,6 +419,12 @@ div.bc_list-actions {
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 16px;
+  &.support {
+    border-top: 1px solid var(--gray100);
+    border-bottom: 1px solid var(--gray100);
+    margin: 0.8em 0px;
+    padding: 1em 0px;
+  }
   ul.bc_list-actions__row {
     margin: 0px;
     padding: 0px;
@@ -399,26 +432,29 @@ div.bc_list-actions {
     grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
     align-items: center;
     justify-items: start;
-  }
-  li {
-    margin: 0px;
-    padding: 0px;
-    display: grid;
-    justify-items: center;
-    align-items: center;
-  }
-  a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    color: var(--gray600);
-    transition: all 0.15s ease-in-out;
-    svg {
-      margin-right: 6px;
+    &:last-of-type {
+      margin-bottom: 6.8px;
     }
-    &:hover {
-      color: var(--teal700);
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      color: var(--gray600);
+      transition: all 0.15s ease-in-out;
+      svg {
+        margin-right: 6px;
+      }
+      &:hover {
+        color: var(--teal700);
+      }
+    }
+    li {
+      margin: 0px;
+      padding: 0px;
+      display: grid;
+      justify-items: center;
+      align-items: center;
     }
   }
 }
@@ -427,8 +463,8 @@ div.bc_list-actions {
   padding: 0.2em 1em;
   margin-right: 0.6em;
   border-radius: 24px;
+  color: var(--teal600);
   background: var(--teal200);
-  color: var(--teal700);
   user-select: none;
   text-transform: capitalize;
   &.no {
