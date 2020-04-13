@@ -13,4 +13,5 @@ export interface Business {
   orderUrl: string;
   instagramUrl: string;
   otherInformation: string;
+  optionalParam: string;
 }
