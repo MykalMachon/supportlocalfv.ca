@@ -23,7 +23,7 @@ const BusinessCard: FC<BusinessCardProps> = ({
 
   const completePrimaryGoal = () => {
     if (process.env.NODE_ENV === 'production' && window?.fathom) {
-      window.fathom('trackGoal', 'JZKJ57AZ', 0);
+      window.fathom('trackGoal', '70J2TCLN', 0);
     }
   };
 
