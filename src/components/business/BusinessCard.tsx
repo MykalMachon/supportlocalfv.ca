@@ -21,6 +21,18 @@ const BusinessCard: FC<BusinessCardProps> = ({
 }) => {
   const orderOptions = hasRemoteOrders.split(',');
 
+  const completePrimaryGoal = () => {
+    if (process.env.NODE_ENV === 'production' && window?.fathom) {
+      window.fathom('trackGoal', 'JZKJ57AZ', 0);
+    }
+  };
+
+  const completeSecondaryGoal = () => {
+    if (process.env.NODE_ENV === 'production' && window?.fathom) {
+      window.fathom('trackGoal', 'NA4YGH7D', 0);
+    }
+  };
+
   return (
     <div className='bc_list-card'>
       <div className='bc_list-card-pad'>
@@ -91,6 +103,7 @@ const BusinessCard: FC<BusinessCardProps> = ({
                 ? giftCardUrl
                 : instagramUrl
             }
+            onClick={completePrimaryGoal}
             className='button'
           >
             {!orderOptions.includes('none')
@@ -104,7 +117,7 @@ const BusinessCard: FC<BusinessCardProps> = ({
           <ul className='bc_list-actions__row'>
             {instagramUrl ? (
               <li>
-                <a href={instagramUrl}>
+                <a href={instagramUrl} onClick={completeSecondaryGoal}>
                   <FiInstagram size={20} /> Instagram
                 </a>
               </li>
@@ -112,7 +125,7 @@ const BusinessCard: FC<BusinessCardProps> = ({
             {url ? (
               <li>
                 {' '}
-                <a href={url}>
+                <a href={url} onClick={completeSecondaryGoal}>
                   <FiGlobe size={20} /> Website
                 </a>{' '}
               </li>
@@ -121,7 +134,7 @@ const BusinessCard: FC<BusinessCardProps> = ({
           <ul className='bc_list-actions__row'>
             {phoneNumber ? (
               <li>
-                <a href={`tel:${phoneNumber}`}>
+                <a href={`tel:${phoneNumber}`} onClick={completeSecondaryGoal}>
                   <FiPhone size={20} /> {phoneNumber}
                 </a>
               </li>
