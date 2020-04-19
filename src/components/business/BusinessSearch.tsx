@@ -16,9 +16,9 @@ const BusinessSearch: FC<BusinessSearchType> = ({
       setFilteredList(
         initList.filter((biz) => {
           if (
-            biz.name.includes(searchQuery) ||
-            biz.city.includes(searchQuery) ||
-            biz.category.includes(searchQuery)
+            biz.name.toLowerCase().includes(searchQuery) ||
+            biz.city.toLowerCase().includes(searchQuery) ||
+            biz.category.toLowerCase().includes(searchQuery)
           ) {
             return true;
           } else {
@@ -41,7 +41,7 @@ const BusinessSearch: FC<BusinessSearchType> = ({
         id='searchBusiness'
         placeholder='Search by name, city, and category...'
         onChange={(e) => {
-          setSearchQuery(e.target.value);
+          setSearchQuery(e.target.value.toLowerCase());
         }}
       />
     </div>
