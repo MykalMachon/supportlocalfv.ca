@@ -67,7 +67,7 @@ const About = (props) => {
         <p>
           Support Local Fraser Valley is aimed to help out businesses all across
           the Fraser Valley. However, there are a few other Fraser Valley
-          natives working on solutions for their more immediate surroundings.
+          natives working on solutions for their more immediate surroundings.{' '}
           <b>
             Community is core to our mission of supporting local business and we
             want to encourage you to use these other sites when applicable as
