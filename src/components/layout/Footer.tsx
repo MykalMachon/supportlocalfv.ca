@@ -6,9 +6,8 @@ const Footer: FC<FooterProps> = ({}) => {
     <footer>
       <article className='footer_content'>
         <p>
-          Don't see your favorite local businesses? submit them{' '}
           <Link href='/submit'>
-            <a>here</a>
+            <a>Don't see your favorite local businesses? submit them here</a>
           </Link>
         </p>
         <p className='footer_content-tiny'>

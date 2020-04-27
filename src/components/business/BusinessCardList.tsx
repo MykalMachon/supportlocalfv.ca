@@ -8,17 +8,17 @@ const BusinessCardList: FC<BusinessCardListProps> = ({ bizlist }) => {
   const [filteredList, setFilteredList] = useState(bizlist);
 
   return (
-    <article className="bc_container">
+    <article className='bc_container'>
       <BusinessSearch
         initList={list}
         filteredList={filteredList}
         setFilteredList={setFilteredList}
       />
-      <ul className="bc_list">
+      <div className='bc_list'>
         {filteredList.map((biz) => {
           return <BusinessCard key={biz.id} business={biz} />;
         })}
-      </ul>
+      </div>
     </article>
   );
 };
