@@ -62,6 +62,20 @@ const About = (props) => {
           </ol>
         </p>
       </section>
+      <h2>Check out similar sites</h2>
+      <section className='container_small'>
+        <p>
+          Support Local Fraser Valley is aimed to help out businesses across the
+          fraser valley. That said, there are a few similar sites that aim to
+          help out more specific citys/towns within the fraser valley. Check
+          them out below!
+        </p>
+        <ul>
+          <li>
+            <a href='https://abbyeatslocal.com/'>Abby Eats Local</a>
+          </li>
+        </ul>
+      </section>
     </Layout>
   );
 };
