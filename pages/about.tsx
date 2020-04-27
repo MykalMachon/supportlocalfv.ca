@@ -22,6 +22,26 @@ const About = (props) => {
           provided a similar service for Oklahoma's local business community.
         </p>
       </section>
+      <h2>Similar Resources</h2>
+      <section className='container_small'>
+        <p>
+          Support Local Fraser Valley is aimed to help out businesses all across
+          the Fraser Valley. However, there are a few other Fraser Valley
+          natives working on solutions for their more immediate surroundings.{' '}
+          <b>
+            Community is core to our mission of supporting local business and we
+            want to encourage you to use these other sites when applicable as
+            well.
+          </b>{' '}
+          Check them out below
+        </p>
+        <ul>
+          <li>
+            <a href='https://abbyeatslocal.com/'>Abby Eats Local</a> showcases
+            Abbotsford's local eateries and drink establishments
+          </li>
+        </ul>
+      </section>
       <h2>Questions & Answers</h2>
       <section className='container_small'>
         <p>
@@ -61,26 +81,6 @@ const About = (props) => {
             </li>
           </ol>
         </p>
-      </section>
-      <h2>Let's Get Specific</h2>
-      <section className='container_small'>
-        <p>
-          Support Local Fraser Valley is aimed to help out businesses all across
-          the Fraser Valley. However, there are a few other Fraser Valley
-          natives working on solutions for their more immediate surroundings.{' '}
-          <b>
-            Community is core to our mission of supporting local business and we
-            want to encourage you to use these other sites when applicable as
-            well.
-          </b>{' '}
-          Check them out below
-        </p>
-        <ul>
-          <li>
-            <a href='https://abbyeatslocal.com/'>Abby Eats Local</a> showcases
-            Abbotsford's local eateries and drink establishments
-          </li>
-        </ul>
       </section>
     </Layout>
   );
